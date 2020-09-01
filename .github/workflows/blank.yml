@@ -37,5 +37,9 @@ jobs:
       - name: test
         run: | 
           cat $HOME/files.json
-          echo '${{ steps.files_changes.outputs.files}}'
+          echo '${{ steps.file_changes.outputs.files}}'
+          echo '${{ steps.file_changes.outputs.files_modified}}'
+          echo '${{ steps.file_changes.outputs.files_added}}'
+          echo '${{ steps.file_changes.outputs.files_removed}}'
+
         
