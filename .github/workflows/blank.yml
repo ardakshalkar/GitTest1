@@ -31,3 +31,11 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
+          
+      - id: file_changes
+        uses: trilom/file-changes-action@v1.2.3
+      - name: test
+        run: | 
+          cat $HOME/files.json
+          echo '${{ steps.files_changes.outputs.files}}'
+        
